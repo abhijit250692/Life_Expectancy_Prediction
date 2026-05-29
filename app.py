@@ -9,7 +9,8 @@ status_map = {'Developed': 0, 'Developing': 1}
 
 def main():
     st.title("Life Expectancy Prediction")
-    st.write("Fill in the details below to predict life expectancy.")
+    st.image("https://user-images.githubusercontent.com/86721208/164498440-5f171021-c58f-470f-863c-dbb5b0325ae4.png",
+            width=800)
 
     with st.form("input_form"):
         st.header("Enter Specifications")
