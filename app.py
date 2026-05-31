@@ -16,7 +16,6 @@ def main():
     )
 
     with st.form("input_form"):
-        st.header("Enter Specifications")
         col1, col2 = st.columns(2)
         with col1:
             status = st.selectbox('Country Status', options=list(status_map.keys()))
