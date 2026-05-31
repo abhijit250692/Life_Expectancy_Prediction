@@ -6,11 +6,14 @@ import numpy as np
 model = joblib.load('RandomForestRegressor_model.pkl')
 scaler = joblib.load('scaler.pkl')
 status_map = {'Developed': 0, 'Developing': 1}
+image_url = "https://user-images.githubusercontent.com/86721208/164498440-5f171021-c58f-470f-863c-dbb5b0325ae4.png"
 
 def main():
     st.title("Life Expectancy Prediction")
-    st.image("https://user-images.githubusercontent.com/86721208/164498440-5f171021-c58f-470f-863c-dbb5b0325ae4.png",
-            width=800)
+    st.markdown(
+        f'<img src="{image_url}" style="width:800px; height:350px; object-fit:cover;">',
+        unsafe_allow_html=True
+    )
 
     with st.form("input_form"):
         st.header("Enter Specifications")
@@ -35,7 +38,9 @@ def main():
             thinness_5_9_years = st.number_input('Thinness 5-9 years (%)', min_value=0.0, max_value=20.0, value=5.0, step=0.01)
             income_composition_of_resources = st.number_input('Income Composition of Resources', min_value=0.0, max_value=1.0, value=0.1, step = 0.01)
             schooling = st.number_input('Schooling (years)', min_value=0.0, max_value=20.0, value=10.0, step=1.0)
-        submitted = st.form_submit_button("Predict Price")
+        lcol1, lcol2, lcol3 = st.columns([2, 1, 2])
+        with lcol2:
+            submitted = st.form_submit_button("Predict Price")
     if submitted:
         input_data = np.array([[status_map[status], adult_mortality, infant_deaths, alcohol, percentage_expenditure, hepatitis_b, measles, bmi, 
                         under_five_deaths, polio, total_expenditure, diphtheria, hiv_aids, gdp, thinness_1_19_years, thinness_5_9_years, 
