@@ -9,7 +9,7 @@ status_map = {'Developed': 0, 'Developing': 1}
 image_url = "https://user-images.githubusercontent.com/86721208/164498440-5f171021-c58f-470f-863c-dbb5b0325ae4.png"
 
 def main():
-    st.title("Life Expectancy Prediction")
+    st.title("Life Expectancy Prediction", text_alignment="center")
     st.markdown(
         f'<img src="{image_url}" style="width:800px; height:350px; object-fit:cover;">',
         unsafe_allow_html=True
