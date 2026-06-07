@@ -1,5 +1,4 @@
 ipykernel
-jupyterlab
 matplotlib
 scikit-learn
 streamlit
